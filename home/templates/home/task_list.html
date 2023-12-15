@@ -6,17 +6,25 @@
     <title>Document</title>
 </head>
 <body>
+    {% if request.user.is_authenticated %}
+    <p>Welcome {{ request.user.username }}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' }">Login</a>
+    {% endif %}
+    <h1>Task List</h1>
+    <a href="{% url 'task-create' %}">Add task</a>
     <table>
         <tr>
                 <th>Task</th>
                 <th></th>
         </tr>
-        {% for task in object_list %}
+        {% for task_list in object_list %}
         <tr>
-            <td>{{ task.title }}</td>
-            <td><a href="{% url 'task' task.id %}">View</a></td>
-            <td><a href="{% url 'task-update' task.id %}">Update</a></td>
-            <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
+            <td>{{ task_list.title }}</td>
+            <td><a href="{% url 'task' task_list.id %}">View</a></td>
+            <td><a href="{% url 'task-update' task_list.id %}">Update</a></td>
+            <td><a href="{% url 'task-delete' task_list.id %}">Delete</a></td>
         </tr>
         {% empty %}
         <h4>No Items in the list</h4>
