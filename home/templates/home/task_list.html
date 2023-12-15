@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+                <th>Task</th>
+                <th></th>
+        </tr>
+        {% for task in object_list %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td><a href="{% url 'task' task.id %}">View</a></td>
+        </tr>
+        {% empty %}
+        <h4>No Items in the list</h4>
+        {% endfor %}
+    </table>
+</body>
+</html>
