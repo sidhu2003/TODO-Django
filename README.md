@@ -1,4 +1,5 @@
-# This is a basic To-Do list application made using django
+# TODO-Django 
+A simple and elegant ToDo application built with Django and class-based views.
 
 ## Installation
 
