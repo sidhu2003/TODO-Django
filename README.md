@@ -29,7 +29,7 @@ A simple and elegant ToDo application built with Django and class-based views.
 
 ## Contributing
 
-We welcome contributions from the open-source community. If you'd like to contribute to Sales Craft, please follow these steps:
+We welcome contributions from the open-source community. If you'd like to contribute to the project, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix:
